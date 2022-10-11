@@ -98,7 +98,7 @@ Plase choose one of the following options (enter the desired number or letter)
         print('The number you gave is smaller than the letters needed to encrypt, so random numbers are generated to compensate with the encryption\n')
         print('IMPORTANT!!! KEEP THIS NUMBER AND SAVE IT, FOR DECRYPTION!!!\n')
         print('The number used to encrypt is: ', cipher_num)
-        print('\n'*10000)
+        # print('\n'*10000)
     elif option_num == 2:
         
 #Ask for the cipher text
@@ -137,9 +137,9 @@ Plase choose one of the following options (enter the desired number or letter)
                 decipher_text = decipher_text + chr(ord(i) - li[index])
         else:
 #lets give ceasar_num the same length as plain_text, looping the digits in ceasar_num
-            for i in ceasar_num:
+            for i in str(ceasar_num):
                 if len(str(ceasar_num))<len(plain_text):
-                    ceasar_num += i
+                    ceasar_num = int(str(ceasar_num) + i)
                 else:
                      break                         
             for index, i in enumerate(str(ceasar_num)):
@@ -154,7 +154,7 @@ Plase choose one of the following options (enter the desired number or letter)
         file.close()
         print('Your dencrypted txt file is created and named decipher.txt\n')
         print('\t')
-        print('\n'*10000)
+        # print('\n'*10000)
         
     else:
         print('The program will now close')
